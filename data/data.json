@@ -1,0 +1,107 @@
+[
+    {
+        "Author": ["Leo Tolstoy"],
+        "Name": "War and Peace",
+        "Year": 1869,
+        "Publisher": "The Russian Messenger",
+        "Rating": 9.5
+    },
+    {
+        "Author": ["Fyodor Dostoevsky"],
+        "Name": "Crime and Punishment",
+        "Year": 1866,
+        "Publisher": "The Russian Messenger",
+        "Rating": 9.2
+    },
+    {
+        "Author": ["Alexander Pushkin"],
+        "Name": "Eugene Onegin",
+        "Year": 1833,
+        "Publisher": "Ilya Glazunov",
+        "Rating": 8.7
+    },
+    {
+        "Author": ["Anton Chekhov"],
+        "Name": "The Cherry Orchard",
+        "Year": 1904,
+        "Publisher": "Znaniye",
+        "Rating": 8.3
+    },
+    {
+        "Author": ["Nikolai Gogol"],
+        "Name": "Dead Souls",
+        "Year": 1842,
+        "Publisher": "Moscow University Press",
+        "Rating": 8.5
+    },
+    {
+        "Author": ["Ivan Turgenev"],
+        "Name": "Fathers and Sons",
+        "Year": 1862,
+        "Publisher": "The Russian Messenger",
+        "Rating": 7.9
+    },
+    {
+        "Author": ["Vladimir Nabokov"],
+        "Name": "Lolita",
+        "Year": 1955,
+        "Publisher": "Olympia Press",
+        "Rating": 8.0
+    },
+    {
+        "Author": ["Mikhail Bulgakov"],
+        "Name": "The Master and Margarita",
+        "Year": 1967,
+        "Publisher": "YMCA Press",
+        "Rating": 9.0
+    },
+    {
+        "Author": ["Leo Tolstoy"],
+        "Name": "Anna Karenina",
+        "Year": 1877,
+        "Publisher": "The Russian Messenger",
+        "Rating": 9.3
+    },
+    {
+        "Author": ["Fyodor Dostoevsky"],
+        "Name": "The Brothers Karamazov",
+        "Year": 1880,
+        "Publisher": "The Russian Messenger",
+        "Rating": 9.4
+    },
+    {
+        "Author": ["Alexander Solzhenitsyn"],
+        "Name": "One Day in the Life of Ivan Denisovich",
+        "Year": 1962,
+        "Publisher": "Novy Mir",
+        "Rating": 8.2
+    },
+    {
+        "Author": ["Boris Pasternak"],
+        "Name": "Doctor Zhivago",
+        "Year": 1957,
+        "Publisher": "Giangiacomo Feltrinelli Editore",
+        "Rating": 8.1
+    },
+    {
+        "Author": ["Maxim Gorky"],
+        "Name": "The Lower Depths",
+        "Year": 1902,
+        "Publisher": "Znaniye",
+        "Rating": 7.5
+    },
+    {
+        "Author": ["Ivan Bunin"],
+        "Name": "Dark Avenues",
+        "Year": 1946,
+        "Publisher": "Novoye Russkoye Slovo",
+        "Rating": 7.8
+    },
+    {
+        "Author": ["Andrei Platonov"],
+        "Name": "The Foundation Pit",
+        "Year": 1969,
+        "Publisher": "Grani",
+        "Rating": 7.6
+    }
+]
