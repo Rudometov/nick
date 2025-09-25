@@ -54,3 +54,25 @@ endif()
 # Add subdirectories for client-server components
 add_subdirectory(client)
 add_subdirectory(server)
+
+# Part И: Add tests subdirectory if tests exist
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tests/CMakeLists.txt)
+    add_subdirectory(tests)
+endif()
+
+# Part К: Doxygen documentation generation
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/doc/doxyconf)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/doc)
+
+    add_custom_target(doc
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${DOXYGEN_OUT}
+        COMMAND cd ${CMAKE_CURRENT_SOURCE_DIR}/doc && ${DOXYGEN_EXECUTABLE} doxyconf
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT "Generating API documentation with Doxygen"
+        VERBATIM
+    )
+else()
+    message(STATUS "Doxygen not found, documentation target will not be available")
+endif()

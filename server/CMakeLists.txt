@@ -10,14 +10,33 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lpthread -pthread")
 
 # Include directories
 include_directories(inc)
+include_directories(lib/inc)
 include_directories(../inc)
 include_directories(../ext)
 
-# Source files for the library
+# === Part З: Dynamic Library ===
+# Library sources
 set(LIB_SOURCES
+    lib/src/json_handler_lib.cpp
     ../src/task.cpp
 )
 
+# Library headers
+set(LIB_HEADERS
+    lib/inc/json_handler_lib.h
+    ../inc/task.h
+)
+
+# Create shared library with export macro
+add_library(json_handler_lib SHARED ${LIB_SOURCES} ${LIB_HEADERS})
+target_compile_definitions(json_handler_lib PRIVATE LIBRARY_EXPORT)
+
+# Platform specific library settings
+if(WIN32)
+    target_compile_definitions(json_handler_lib PRIVATE _WIN32_WINNT=0x0601)
+endif()
+
+# === Server Executable ===
 # Source files for the server executable
 set(SERVER_SOURCES
     src/main_server.cpp
@@ -25,13 +44,13 @@ set(SERVER_SOURCES
 )
 
 # Header files
-set(HEADERS
+set(SERVER_HEADERS
     inc/server.h
-    ../inc/task.h
 )
 
-# Create executable
-add_executable(${PROJECT_NAME} ${SERVER_SOURCES} ${LIB_SOURCES} ${HEADERS})
+# Create executable and link with library
+add_executable(${PROJECT_NAME} ${SERVER_SOURCES} ${SERVER_HEADERS})
+target_link_libraries(${PROJECT_NAME} json_handler_lib)
 
 # Platform specific settings
 if(WIN32)
@@ -41,8 +60,10 @@ endif()
 # Enable warnings
 if(MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE /W4)
+    target_compile_options(json_handler_lib PRIVATE /W4)
 else()
     target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(json_handler_lib PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
 # Copy data file to build directory
